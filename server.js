@@ -1,4 +1,4 @@
-// API DOcumenATion
+// API Documentation
 import swaggerUi from "swagger-ui-express";
 import swaggerDoc from "swagger-jsdoc";
 // packages imports
@@ -8,7 +8,7 @@ import dotenv from "dotenv";
 import colors from "colors";
 import cors from "cors";
 import morgan from "morgan";
-//securty packges
+//security packges
 import helmet from "helmet";
 import xss from "xss-clean";
 import mongoSanitize from "express-mongo-sanitize";
@@ -38,8 +38,8 @@ const options = {
     },
     servers: [
       {
-//         url: "http://localhost:8080",
-            url: "https://nodejs-job-portal-app.onrender.com"
+         url: "http://localhost:8080",
+//            url: "https://nodejs-job-portal-app.onrender.com"
       },
     ],
   },
@@ -51,7 +51,7 @@ const spec = swaggerDoc(options);
 //rest object
 const app = express();
 
-//middelwares
+//middlewares
 app.use(helmet(``));
 app.use(xss());
 app.use(mongoSanitize());
@@ -64,10 +64,10 @@ app.get('/', (req, res) => {
     res.send("<h1>JOB PORTAL BACKEND</h1>")
 });
 
-app.use("/v1/test", testRoutes);
-app.use("/v1/auth", authRoutes);
-app.use("/v1/user", userRoutes);
-app.use("/v1/job", jobsRoutes);
+app.use("/api/v1/test", testRoutes);
+app.use("/api/v1/auth", authRoutes);
+app.use("/api/v1/user", userRoutes);
+app.use("/api/v1/job", jobsRoutes);
 
 //homeroute root
 app.use("/api-doc", swaggerUi.serve, swaggerUi.setup(spec));

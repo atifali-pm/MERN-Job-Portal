@@ -55,7 +55,7 @@ const router = express.Router();
  *        lastName: Doe
  *        email: johndoes@gmail.com
  *        password: test@123
- *        location: mumbai
+ *        location: London
  */
 
 /**

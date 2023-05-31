@@ -4,7 +4,7 @@ const jobSchema = new mongoose.Schema(
   {
     company: {
       type: String,
-      requied: [true, "Companay name is require"],
+      requied: [true, "Company name is require"],
     },
     position: {
       type: String,
@@ -18,7 +18,7 @@ const jobSchema = new mongoose.Schema(
     },
     workType: {
       type: String,
-      enum: ["full-time", "part-time", "internship", "contaract"],
+      enum: ["full-time", "part-time", "internship", "contract"],
       default: "full-time",
     },
     workLocation: {
